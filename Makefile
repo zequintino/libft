@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jquintin <jquintin@student.42.fr>          +#+  +:+       +#+         #
+#    By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/09/03 03:45:47 by jquintin          #+#    #+#              #
-#    Updated: 2022/10/15 13:45:17 by jquintin         ###   ########.fr        #
+#    Created: 2022/10/25 17:18:29 by jquintin          #+#    #+#              #
+#    Updated: 2022/10/25 17:19:28 by jquintin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ B_SRC = ft_lstnew.c \
 	ft_lstiter.c \
 	ft_lstmap.c
 
-CC = clang
+CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -77,8 +77,8 @@ bonus: $(B_OBJ)
 	ar -rcs $(NAME) $(B_OBJ)
 
 test: clean all
-	$(CC) libft_test/libft_test.c  -L. -lft -o libft_test/test `pkg-config --cflags --libs libbsd-overlay`
-	./libft_test/test
+	$(CC) ../libft_test/libft_test.c  -L. -lft -o ../libft_test/test `pkg-config --cflags --libs libbsd-overlay`
+	 ./../libft_test/test
 
 clean:
 	/bin/rm -f $(OBJ) $(B_OBJ) *.txt

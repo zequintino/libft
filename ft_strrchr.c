@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/30 13:25:12 by jquintin          #+#    #+#             */
-/*   Updated: 2022/09/15 18:30:10 by jquintin         ###   ########.fr       */
+/*   Created: 2022/10/25 17:24:50 by jquintin          #+#    #+#             */
+/*   Updated: 2022/10/25 17:24:51 by jquintin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 	if (!c)
 		return ((char *)s + (i - 1));
 	while (--i >= 0)
-		if (*(s + i) == c)
+		if (*(s + i) == (char)c)
 			return ((char *)s + i);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 21:00:40 by jquintin          #+#    #+#             */
-/*   Updated: 2022/10/25 17:36:29 by jquintin         ###   ########.fr       */
+/*   Updated: 2022/10/26 18:34:52 by jquintin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*tmp;
+	char	tmp[len];
 	size_t	i;
 
-	tmp = (char *)malloc(sizeof(char) * len);
-	if (!dst || !tmp)
+	if (!dst && !src)
 		return (NULL);
-	i = -1;
-	while (++i < len)
-		*(tmp + i) = *(const char *)src++;
-	i = -1;
-	while (++i < len)
+	i = 0;
+	while (i < len)
+	{
+		*(tmp + i) = *((char *)src + i);
+		i++;
+	}
+	i = 0;
+	while (i < len)
+	{
 		*((char *)dst + i) = *(tmp + i);
-	free(tmp);
+		i++;
+	}
 	return (dst);
 }

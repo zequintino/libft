@@ -6,7 +6,7 @@
 #    By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/25 17:18:29 by jquintin          #+#    #+#              #
-#    Updated: 2022/10/26 13:02:50 by jquintin         ###   ########.fr        #
+#    Updated: 2022/10/27 18:55:12 by jquintin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ B_SRC = ft_lstnew.c \
 	ft_lstiter.c \
 	ft_lstmap.c
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 

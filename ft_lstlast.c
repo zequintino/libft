@@ -6,7 +6,7 @@
 /*   By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/17 15:09:51 by jquintin          #+#    #+#             */
-/*   Updated: 2022/09/19 03:08:41 by jquintin         ###   ########.fr       */
+/*   Updated: 2022/10/28 12:27:06 by jquintin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstlast(t_list *lst)
 	{
 		if (!(lst->next))
 			return (lst);
-		lst =lst->next;
+		lst = lst->next;
 	}
 	return (NULL);
 }

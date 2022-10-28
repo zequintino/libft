@@ -6,7 +6,7 @@
 /*   By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:20:57 by jquintin          #+#    #+#             */
-/*   Updated: 2022/10/27 17:05:29 by jquintin         ###   ########.fr       */
+/*   Updated: 2022/10/28 18:30:02 by jquintin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*ptr;
+	size_t	tmp;
 
+	tmp = count * size;
+	if (tmp / size != count)
+		return (NULL);
 	ptr = (void *)malloc(size * count);
 	if (!ptr)
 		return (NULL);

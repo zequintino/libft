@@ -6,7 +6,7 @@
 /*   By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 02:42:00 by jquintin          #+#    #+#             */
-/*   Updated: 2022/09/16 14:57:32 by jquintin         ###   ########.fr       */
+/*   Updated: 2022/10/28 15:05:21 by jquintin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	char			*subs;
-	unsigned int	i;
+	char	*subs;
+	size_t	i;
 
 	if (!*s && !len)
 		return (NULL);
 	if (ft_strlen(s) < start)
+		return (ft_strdup(""));
+	if (len > ((ft_strlen(s) + 1) - start))
 	{
-		subs = (char *)malloc(sizeof(char) * 1);
+		len = (ft_strlen(s) + 1) - start;
+		subs = (char *)malloc(sizeof(char) * len);
 		if (!subs)
 			return (NULL);
-		*subs = '\0';
-		return (subs);
 	}
-	subs = (char *)malloc(sizeof(char) * len + 1);
+	else
+		subs = (char *)malloc(sizeof(char) * len + 1);
 	if (!subs)
 		return (NULL);
 	i = -1;

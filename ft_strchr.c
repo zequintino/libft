@@ -6,7 +6,7 @@
 /*   By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:23:47 by jquintin          #+#    #+#             */
-/*   Updated: 2022/10/31 17:35:40 by jquintin         ###   ########.fr       */
+/*   Updated: 2022/10/31 19:04:53 by jquintin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strchr(const char *s, int c)
 			return ((char *)s);
 		s++;
 	}
-	if (*s == c)
+	if (*s == (char)c)
 		return ((char *)s);
 	return (NULL);
 }

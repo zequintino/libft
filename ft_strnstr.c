@@ -6,7 +6,7 @@
 /*   By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:24:41 by jquintin          #+#    #+#             */
-/*   Updated: 2022/10/28 12:25:07 by jquintin         ###   ########.fr       */
+/*   Updated: 2022/10/31 11:46:39 by jquintin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	if (!big && len == 0)
 		return (NULL);
-	else if (big[i] == '\0' && little[i] == '\0')
+	else if (!big[i] && !little[i])
 		return ((char *)big);
 	while ((big[i]) && (i <= len))
 	{

@@ -6,7 +6,7 @@
 /*   By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:22:52 by jquintin          #+#    #+#             */
-/*   Updated: 2022/10/25 17:22:54 by jquintin         ###   ########.fr       */
+/*   Updated: 2022/10/31 13:03:37 by jquintin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	t_list	*next;
 
-	next = lst->next;
-	del(lst);
-	lst = next;
+	if (lst && del)
+	{
+		next = lst->next;
+		del(lst);
+		lst = next;
+	}
 }

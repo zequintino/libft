@@ -6,7 +6,7 @@
 /*   By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 17:23:35 by jquintin          #+#    #+#             */
-/*   Updated: 2022/10/25 17:23:36 by jquintin         ###   ########.fr       */
+/*   Updated: 2022/10/31 15:18:17 by jquintin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ char	**ft_split(const char *s, char c)
 	size_t	str_i;
 	char	**split;
 
+	if (!s)
+		return (NULL);
 	split = (char **)malloc((ft_substr_count(s, c) + 1) * sizeof(char *));
 	if (!split)
 		return (NULL);
@@ -35,10 +37,7 @@ char	**ft_split(const char *s, char c)
 		while (s[i] && (s[i] != c))
 			i++;
 		if (j < i)
-		{
-			split[str_i] = ft_cpyalloc(&s[j], (i - j) + 1);
-			str_i++;
-		}
+			split[str_i++] = ft_cpyalloc(&s[j], (i - j) + 1);
 	}
 	split[str_i] = NULL;
 	return (split);

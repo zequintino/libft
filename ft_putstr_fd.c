@@ -6,7 +6,7 @@
 /*   By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 15:25:18 by jquintin          #+#    #+#             */
-/*   Updated: 2022/10/28 12:36:45 by jquintin         ###   ########.fr       */
+/*   Updated: 2022/10/31 12:58:46 by jquintin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	while (*s)
-		write(fd, &*s++, sizeof(char));
+	if (s)
+	{
+		while (*s)
+			write(fd, &*s++, sizeof(char));
+	}
 }

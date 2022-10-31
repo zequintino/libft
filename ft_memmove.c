@@ -6,64 +6,44 @@
 /*   By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/08 21:00:40 by jquintin          #+#    #+#             */
-/*   Updated: 2022/10/28 14:15:35 by jquintin         ###   ########.fr       */
+/*   Updated: 2022/10/31 11:34:15 by jquintin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	size_t	i;
 
-	if (!dst && !src)
+	if (!dest && !src)
 		return (NULL);
 	i = -1;
-	if ((char *)dst > (char *)src)
-		while (len-- > 0)
-			*((char *)dst + len) = *((char *)src + len);
+	if ((char *)dest > (char *)src)
+		while (n-- > 0)
+			*((char *)dest + n) = *((char *)src + n);
 	else
-		while (++i < len)
-			*((char *)dst + i) = *((char *)src + i);
-	return (dst);
+		while (++i < n)
+			*((char *)dest + i) = *((char *)src + i);
+	return (dest);
 }
 
-/* void	*ft_memmove(void *dst, const void *src, size_t len)
-{
-	char	*tmp_dst;
-	char	*tmp_src;
-	size_t	i;
-
-	if (!dst && !src)
-		return (NULL);
-	tmp_dst = (char *)dst;
-	tmp_src = (char *)src;
-	i = -1;
-	if (tmp_dst > tmp_src)
-		while (len-- > 0)
-			*(tmp_dst + len) = *(tmp_src + len);
-	else
-		while (++i < len)
-			*(tmp_dst + i) = *(tmp_src + i);
-	return (dst);
-} */
-
-/* void	*ft_memmove(void *dst, const void *src, size_t len)
+/* void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char	*tmp;
 	size_t	i;
 
-	if (!dst && !src)
+	if (!dest && !src)
 		return (NULL);
-	tmp = (char*)malloc(sizeof(char) * len);
+	tmp = (char*)malloc(sizeof(char) * n);
 	if (!tmp)
 		return (NULL);
 	i = -1;
-	while (++i < len)
+	while (++i < n)
 		*(tmp + i) = *((char *)src + i);
 	i = -1;
-	while (++i < len)
-		*((char *)dst + i) = *((char *)src + i);
+	while (++i < n)
+		*((char *)dest + i) = *((char *)src + i);
 	free(tmp);
-	return (dst);
+	return (dest);
 } */

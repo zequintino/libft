@@ -6,7 +6,7 @@
 /*   By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 02:42:00 by jquintin          #+#    #+#             */
-/*   Updated: 2022/10/28 23:32:52 by jquintin         ###   ########.fr       */
+/*   Updated: 2022/10/31 15:10:59 by jquintin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*subs;
 	size_t	i;
 
-	if (!*s && !len)
+	if (!s)
 		return (NULL);
 	if (ft_strlen(s) <= start)
 		return (ft_strdup(""));

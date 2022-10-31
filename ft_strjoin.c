@@ -6,7 +6,7 @@
 /*   By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 12:29:35 by jquintin          #+#    #+#             */
-/*   Updated: 2022/09/12 19:59:35 by jquintin         ###   ########.fr       */
+/*   Updated: 2022/10/31 15:05:47 by jquintin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	i;
 	size_t	j;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	str = (char *)malloc((len * sizeof(char)));
+	str = (char *)malloc(sizeof(char) * len);
 	if (!str)
 		return (NULL);
 	i = 0;

@@ -6,7 +6,7 @@
 #    By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/25 17:18:29 by jquintin          #+#    #+#              #
-#    Updated: 2022/10/28 15:43:44 by jquintin         ###   ########.fr        #
+#    Updated: 2022/10/31 11:05:23 by jquintin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,8 +75,8 @@ bonus: $(B_OBJ)
 	ar -rcs $(NAME) $(B_OBJ)
 
 test: clean all
-	$(CC) ../../42_my_testers/libft_test/libft_test.c  -L. -lft -o ../../42_my_testers/libft_test/test `pkg-config --cflags --libs libbsd-overlay`
-	./../../42_my_testers/libft_test/test
+	$(CC) ../../42_my_testers/jquintin-libft-tester/libft_test.c  -L. -lft -o ../../42_my_testers/jquintin-libft-tester/test `pkg-config --cflags --libs libbsd-overlay`
+	./../../42_my_testers/jquintin-libft-tester/test
 
 clean:
 	/bin/rm -f $(OBJ) $(B_OBJ)

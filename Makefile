@@ -6,7 +6,7 @@
 #    By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/25 17:18:29 by jquintin          #+#    #+#              #
-#    Updated: 2022/10/31 11:05:23 by jquintin         ###   ########.fr        #
+#    Updated: 2022/11/01 11:38:01 by jquintin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,20 +74,12 @@ all: $(NAME)
 bonus: $(B_OBJ)
 	ar -rcs $(NAME) $(B_OBJ)
 
-test: clean all
-	$(CC) ../../42_my_testers/jquintin-libft-tester/libft_test.c  -L. -lft -o ../../42_my_testers/jquintin-libft-tester/test `pkg-config --cflags --libs libbsd-overlay`
-	./../../42_my_testers/jquintin-libft-tester/test
-
 clean:
-	/bin/rm -f $(OBJ) $(B_OBJ)
+	rm -f $(OBJ) $(B_OBJ)
 
 fclean: clean
-	/bin/rm -f $(NAME) libft.so a.out
+	rm -f $(NAME)
 
 re: fclean all
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC) $(B_SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ) $(B_OBJ)
 
 .PHONY: all, bonus, clean, fclean, re

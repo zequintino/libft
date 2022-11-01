@@ -6,7 +6,7 @@
 /*   By: jquintin <jquintin@student.42lisboa.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/04 02:42:00 by jquintin          #+#    #+#             */
-/*   Updated: 2022/10/31 15:10:59 by jquintin         ###   ########.fr       */
+/*   Updated: 2022/11/01 15:55:24 by jquintin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (ft_strdup(""));
 	if (len > ((ft_strlen(s) + 1) - start))
 	{
-		len = (ft_strlen(s) + 1) - start;
-		subs = (char *)malloc(sizeof(char) * len);
+		len = (ft_strlen(s)) - start;
+		subs = (char *)malloc(sizeof(char) * (len + 1));
 		if (!subs)
 			return (NULL);
 	}
